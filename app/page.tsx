@@ -4,6 +4,7 @@ import Cast from "@/components/Cast";
 import RSVP from "@/components/RSVP";
 import Snowfall from "@/components/Snowfall";
 import FloatingElements from "@/components/FloatingElements";
+import SnowButton from "@/components/SnowButton";
 
 export default function Home() {
   return (
@@ -19,6 +20,9 @@ export default function Home() {
         <Cast />
         <RSVP />
       </div>
+
+      {/* Easter egg button */}
+      <SnowButton />
     </main>
   );
 }
