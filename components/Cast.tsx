@@ -113,7 +113,6 @@ export default function Cast() {
                 <h3 className="text-xl font-bold text-jays-navy">
                   {person.name}
                 </h3>
-                <Flag country={person.flag} size={20} />
               </div>
               <p className="text-sm text-jays-red font-bold">{person.role}</p>
               <p className="text-jays-navy/70 mt-1">{person.description}</p>
@@ -144,8 +143,6 @@ export default function Cast() {
               <h3 className="text-xl font-bold text-jays-navy">
                 Everyone Else
               </h3>
-              <Flag country="gb" size={20} />
-              <Flag country="ca" size={20} />
             </div>
             <p className="text-sm text-jays-red font-bold">Supporting Cast</p>
             <p className="text-jays-navy/70 mt-1">the rest of us are just NPCs i think</p>
