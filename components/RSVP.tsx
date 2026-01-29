@@ -3,6 +3,31 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import confetti from "canvas-confetti";
+import Image from "next/image";
+
+// Using Twemoji CDN for consistent flag rendering
+const Flag = ({ country, size = 24 }: { country: string; size?: number }) => {
+  const flagCodes: Record<string, string> = {
+    kr: "1f1f0-1f1f7", // South Korea
+    vn: "1f1fb-1f1f3", // Vietnam
+    ca: "1f1e8-1f1e6", // Canada
+    gb: "1f1ec-1f1e7", // UK
+  };
+
+  const code = flagCodes[country];
+  if (!code) return null;
+
+  return (
+    <Image
+      src={`https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/${code}.svg`}
+      alt={`${country} flag`}
+      width={size}
+      height={size}
+      className="inline-block"
+      unoptimized
+    />
+  );
+};
 
 export default function RSVP() {
   const [showModal, setShowModal] = useState(false);
@@ -80,14 +105,14 @@ export default function RSVP() {
         >
           🐦 See you there! 🐦
         </motion.p>
-        <div className="flex justify-center gap-2 mt-4">
-          <span className="text-2xl">🇰🇷</span>
+        <div className="flex justify-center items-center gap-3 mt-4">
+          <Flag country="kr" size={28} />
           <span className="text-2xl">❄️</span>
-          <span className="text-2xl">🇻🇳</span>
+          <Flag country="vn" size={28} />
           <span className="text-2xl">⚾</span>
-          <span className="text-2xl">🇰🇷</span>
+          <Flag country="ca" size={28} />
           <span className="text-2xl">❄️</span>
-          <span className="text-2xl">🇻🇳</span>
+          <Flag country="gb" size={28} />
         </div>
       </motion.section>
 
@@ -111,10 +136,10 @@ export default function RSVP() {
             >
               <motion.div
                 className="text-6xl mb-4"
-                animate={{ rotate: [0, 10, -10, 0] }}
+                animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 0.5, repeat: 3 }}
               >
-                😂
+                🐦
               </motion.div>
               <h3 className="text-2xl font-bold text-jays-navy mb-4">
                 lol this button doesn't actually do anything
@@ -128,7 +153,7 @@ export default function RSVP() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Got it! 😂
+                Got it!
               </motion.button>
             </motion.div>
           </motion.div>

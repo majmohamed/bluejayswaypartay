@@ -1,6 +1,31 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
+
+// Using Twemoji CDN for consistent flag rendering
+const Flag = ({ country, size = 28 }: { country: string; size?: number }) => {
+  const flagCodes: Record<string, string> = {
+    kr: "1f1f0-1f1f7", // South Korea
+    vn: "1f1fb-1f1f3", // Vietnam
+    ca: "1f1e8-1f1e6", // Canada
+    gb: "1f1ec-1f1e7", // UK
+  };
+
+  const code = flagCodes[country];
+  if (!code) return null;
+
+  return (
+    <Image
+      src={`https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/svg/${code}.svg`}
+      alt={`${country} flag`}
+      width={size}
+      height={size}
+      className="inline-block"
+      unoptimized
+    />
+  );
+};
 
 export default function Hero() {
   return (
@@ -42,35 +67,31 @@ export default function Hero() {
         </p>
 
         {/* Flags decoration */}
-        <div className="flex justify-center gap-3 mb-6">
-          <motion.span
-            className="text-2xl"
+        <div className="flex justify-center items-center gap-3 mb-6">
+          <motion.div
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            🇰🇷
-          </motion.span>
-          <motion.span
-            className="text-2xl"
+            <Flag country="kr" size={28} />
+          </motion.div>
+          <motion.div
             animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, delay: 0.3 }}
+            transition={{ duration: 1.5, repeat: Infinity, delay: 0.2 }}
           >
-            🇻🇳
-          </motion.span>
-          <motion.span
-            className="text-2xl"
+            <Flag country="vn" size={28} />
+          </motion.div>
+          <motion.div
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, delay: 0.4 }}
+          >
+            <Flag country="ca" size={28} />
+          </motion.div>
+          <motion.div
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, delay: 0.6 }}
           >
-            🇰🇷
-          </motion.span>
-          <motion.span
-            className="text-2xl"
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity, delay: 0.9 }}
-          >
-            🇻🇳
-          </motion.span>
+            <Flag country="gb" size={28} />
+          </motion.div>
         </div>
 
         <motion.div
