@@ -96,7 +96,7 @@ export default function SnowButton() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                fr fr
+                go back
               </motion.button>
             </motion.div>
           </motion.div>
