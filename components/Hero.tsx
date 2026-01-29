@@ -38,20 +38,18 @@ export default function Hero() {
       >
         {/* Decorative birds around title */}
         <div className="flex items-center justify-center gap-4 mb-2">
-          <motion.span
-            className="text-4xl"
+          <motion.div
             animate={{ rotate: [-10, 10, -10] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
-            🐦
-          </motion.span>
-          <motion.span
-            className="text-4xl"
+            <Image src="/bluejay.png" alt="Blue Jay" width={40} height={40} />
+          </motion.div>
+          <motion.div
             animate={{ rotate: [10, -10, 10] }}
             transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
           >
-            🐦
-          </motion.span>
+            <Image src="/bluejay.png" alt="Blue Jay" width={40} height={40} />
+          </motion.div>
         </div>
 
         <motion.h1

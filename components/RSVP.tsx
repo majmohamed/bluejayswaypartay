@@ -98,13 +98,15 @@ export default function RSVP() {
         >
           I'm In! 🎉
         </motion.button>
-        <motion.p
-          className="text-jays-navy/60 mt-8 text-xl font-medium"
+        <motion.div
+          className="text-jays-navy/60 mt-8 text-xl font-medium flex items-center justify-center gap-2"
           animate={{ y: [0, -5, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          🐦 See you there! 🐦
-        </motion.p>
+          <Image src="/bluejay.png" alt="Blue Jay" width={28} height={28} />
+          <span>See you there!</span>
+          <Image src="/bluejay.png" alt="Blue Jay" width={28} height={28} />
+        </motion.div>
         <div className="flex justify-center items-center gap-3 mt-4">
           <Flag country="kr" size={28} />
           <span className="text-2xl">❄️</span>
