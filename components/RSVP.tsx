@@ -144,8 +144,11 @@ export default function RSVP() {
               <h3 className="text-2xl font-bold text-jays-navy mb-4">
                 lol this button doesn't actually do anything
               </h3>
-              <p className="text-xl text-jays-blue mb-6">
+              <p className="text-xl text-jays-blue mb-4">
                 but see u soon! 💙
+              </p>
+              <p className="text-xs text-jays-navy/40 mb-4 italic">
+                apologies for the weird little pigeon emoji these were supposed to be blue jays i'm tryin my best ok and i only had 12 minutes to do this
               </p>
               <motion.button
                 onClick={() => setShowModal(false)}

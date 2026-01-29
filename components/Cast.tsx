@@ -137,7 +137,7 @@ export default function Cast() {
             animate={{ rotate: [0, 10, -10, 0] }}
             transition={{ duration: 2, repeat: Infinity, delay: 0.9 }}
           >
-            🎮
+            👤
           </motion.span>
           <div className="flex-1">
             <div className="flex items-center gap-2">
