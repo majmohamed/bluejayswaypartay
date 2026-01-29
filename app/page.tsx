@@ -2,14 +2,23 @@ import Hero from "@/components/Hero";
 import Details from "@/components/Details";
 import Cast from "@/components/Cast";
 import RSVP from "@/components/RSVP";
+import Snowfall from "@/components/Snowfall";
+import FloatingElements from "@/components/FloatingElements";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-cream">
-      <Hero />
-      <Details />
-      <Cast />
-      <RSVP />
+    <main className="min-h-screen relative overflow-hidden">
+      {/* Background effects */}
+      <Snowfall />
+      <FloatingElements />
+
+      {/* Main content */}
+      <div className="relative z-20">
+        <Hero />
+        <Details />
+        <Cast />
+        <RSVP />
+      </div>
     </main>
   );
 }

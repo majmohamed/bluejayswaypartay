@@ -7,6 +7,65 @@ html {
 }
 
 body {
-  background-color: #faf9f6;
-  color: #2a3c3a;
+  background: linear-gradient(180deg, #e8f4fc 0%, #faf9f6 50%, #e8f4fc 100%);
+  color: #1D2D5C;
+  overflow-x: hidden;
+}
+
+/* Snowflake styles */
+.snowflake {
+  position: fixed;
+  top: -10vh;
+  color: #fff;
+  font-size: 1rem;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.snowflake:nth-child(1) { left: 5%; animation: snowfall 10s linear infinite; animation-delay: 0s; }
+.snowflake:nth-child(2) { left: 15%; animation: snowfall 12s linear infinite; animation-delay: 1s; font-size: 1.2rem; }
+.snowflake:nth-child(3) { left: 25%; animation: snowfall 8s linear infinite; animation-delay: 2s; }
+.snowflake:nth-child(4) { left: 35%; animation: snowfall 14s linear infinite; animation-delay: 0.5s; font-size: 0.8rem; }
+.snowflake:nth-child(5) { left: 45%; animation: snowfall 9s linear infinite; animation-delay: 3s; }
+.snowflake:nth-child(6) { left: 55%; animation: snowfall 11s linear infinite; animation-delay: 1.5s; font-size: 1.1rem; }
+.snowflake:nth-child(7) { left: 65%; animation: snowfall 13s linear infinite; animation-delay: 2.5s; }
+.snowflake:nth-child(8) { left: 75%; animation: snowfall 7s linear infinite; animation-delay: 0.8s; font-size: 0.9rem; }
+.snowflake:nth-child(9) { left: 85%; animation: snowfall 10s linear infinite; animation-delay: 4s; }
+.snowflake:nth-child(10) { left: 95%; animation: snowfall 15s linear infinite; animation-delay: 2s; font-size: 1.3rem; }
+
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10vh) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(30px) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+/* Floating element animations */
+.floating-element {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Card hover wiggle */
+.wiggle-hover:hover {
+  animation: wiggle 0.3s ease-in-out;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background: rgba(29, 45, 92, 0.7);
+  backdrop-filter: blur(4px);
 }
