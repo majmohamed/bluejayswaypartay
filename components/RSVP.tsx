@@ -114,6 +114,9 @@ export default function RSVP() {
           <span className="text-2xl">❄️</span>
           <Flag country="gb" size={28} />
         </div>
+        <p className="text-sm text-jays-navy/50 mt-8 italic">
+          sponsored by Benny, Fem, Marlow and Bov
+        </p>
       </motion.section>
 
       {/* Funny Modal */}
