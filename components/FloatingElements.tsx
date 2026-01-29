@@ -28,10 +28,10 @@ const Flag = ({ country, size = 24 }: { country: string; size?: number }) => {
 };
 
 const floatingItems = [
-  { type: "bluejay", top: "10%", left: "8%", delay: 0, duration: 6 },
-  { type: "bluejay", top: "25%", left: "85%", delay: 1, duration: 7 },
-  { type: "bluejay", top: "60%", left: "5%", delay: 2, duration: 5 },
-  { type: "bluejay", top: "75%", left: "90%", delay: 0.5, duration: 8 },
+  { type: "emoji", content: "🐦", top: "10%", left: "8%", delay: 0, duration: 6 },
+  { type: "emoji", content: "🐦", top: "25%", left: "85%", delay: 1, duration: 7 },
+  { type: "emoji", content: "🐦", top: "60%", left: "5%", delay: 2, duration: 5 },
+  { type: "emoji", content: "🐦", top: "75%", left: "90%", delay: 0.5, duration: 8 },
   { type: "flag", country: "kr", top: "15%", left: "75%", delay: 1.5, duration: 6.5 },
   { type: "flag", country: "vn", top: "40%", left: "92%", delay: 2.5, duration: 7.5 },
   { type: "flag", country: "ca", top: "20%", left: "3%", delay: 0.8, duration: 5.5 },
@@ -64,9 +64,7 @@ export default function FloatingElements() {
             ease: "easeInOut",
           }}
         >
-          {item.type === "bluejay" ? (
-            <Image src="/bluejay.png" alt="Blue Jay" width={36} height={36} />
-          ) : item.type === "emoji" ? (
+          {item.type === "emoji" ? (
             <span className="text-3xl md:text-4xl">{item.content}</span>
           ) : (
             <Flag country={item.country!} size={32} />
